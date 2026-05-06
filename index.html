@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pooja Signs — Premium Signage in Bangalore</title>
+  <meta name="description" content="Pooja Signs — Bangalore's trusted sign maker for restaurants, stores and businesses. LED, Neon, SS Letters, Brass, Vinyl, ACP, and more." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red-dark: #7B1A0A;
+      --red-mid: #B5410E;
+      --orange: #D4821A;
+      --gold: #FFD966;
+      --gold-light: #FFF3CD;
+      --gold-pale: #FFE9A0;
+      --cream: #FFF8EE;
+      --text: #1a1a1a;
+      --text-muted: #666;
+      --border: rgba(0,0,0,0.1);
+      --card-bg: #ffffff;
+      --surface: #faf5ef;
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* NAV */
+    nav {
+      background: var(--red-dark);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px; position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+    .nav-brand { font-size: 18px; font-weight: 600; color: var(--gold); letter-spacing: 2px; }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { font-size: 13px; color: rgba(255,220,120,0.8); }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold); color: var(--red-dark);
+      border: none; border-radius: var(--radius-sm);
+      padding: 7px 18px; font-size: 13px; font-weight: 600;
+      cursor: pointer;
+    }
+    .nav-cta:hover { background: #FFC933; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #7B1A0A 0%, #B5410E 45%, #D4821A 100%);
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(45deg,
+        rgba(255,200,50,0.04) 0px, rgba(255,200,50,0.04) 1px,
+        transparent 1px, transparent 24px);
+      pointer-events: none;
+    }
+    .hero-om { font-size: 72px; display: block; margin-bottom: 0.5rem; }
+    .hero h1 {
+      font-size: 48px; font-weight: 700; color: var(--gold);
+      letter-spacing: 4px; margin-bottom: 0.5rem;
+    }
+    .hero .tagline { font-size: 17px; color: var(--gold-pale); letter-spacing: 2px; margin-bottom: 0.5rem; }
+    .hero .sub { font-size: 14px; color: rgba(255,230,150,0.65); margin-bottom: 2rem; }
+    .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-gold {
+      background: var(--gold); color: var(--red-dark);
+      border: none; border-radius: var(--radius-sm);
+      padding: 13px 36px; font-size: 15px; font-weight: 700;
+      cursor: pointer; letter-spacing: 0.5px;
+    }
+    .btn-gold:hover { background: #FFC933; }
+    .btn-outline-gold {
+      background: transparent; color: var(--gold);
+      border: 2px solid var(--gold); border-radius: var(--radius-sm);
+      padding: 11px 36px; font-size: 15px; font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-outline-gold:hover { background: rgba(255,217,102,0.12); }
+
+    /* MARQUEE STRIP */
+    .strip {
+      background: var(--gold); color: var(--red-dark);
+      padding: 10px 0; overflow: hidden; white-space: nowrap;
+    }
+    .strip-inner {
+      display: inline-block;
+      animation: marquee 22s linear infinite;
+      font-size: 13px; font-weight: 700; letter-spacing: 1.5px;
+    }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* SECTIONS */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+    section { padding: 4rem 0; }
+    .section-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 3px;
+      color: var(--red-mid); text-transform: uppercase; margin-bottom: 0.4rem;
+    }
+    .section-title { font-size: 30px; font-weight: 700; margin-bottom: 0.5rem; }
+    .divider { height: 4px; width: 52px; background: var(--orange); border-radius: 2px; margin-bottom: 1.5rem; }
+    .section-desc { font-size: 15px; color: var(--text-muted); max-width: 600px; line-height: 1.8; }
+
+    /* ABOUT */
+    .about-wrap {
+      display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem;
+      box-shadow: 0 2px 16px rgba(180,60,10,0.07);
+    }
+    .about-icon-box {
+      width: 64px; height: 64px; flex-shrink: 0;
+      background: var(--red-dark); border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 32px;
+    }
+    .about-text { flex: 1; min-width: 220px; }
+    .about-text p { font-size: 15px; color: var(--text-muted); line-height: 1.9; }
+    .stats { display: flex; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap; }
+    .stat-item { text-align: center; }
+    .stat-num { font-size: 26px; font-weight: 700; color: var(--red-mid); }
+    .stat-label { font-size: 12px; color: var(--text-muted); }
+
+    /* PRODUCTS */
+    .products-bg { background: var(--surface); }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px; margin-top: 0.5rem;
+    }
+    .product-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      cursor: default;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(180,60,10,0.12);
+      border-color: var(--orange);
+    }
+    .product-icon-wrap {
+      width: 48px; height: 48px;
+      background: var(--gold-light); border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; margin-bottom: 0.75rem;
+    }
+    .product-name { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .product-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+    .product-badge {
+      display: inline-block; margin-top: 8px;
+      font-size: 10px; font-weight: 700; letter-spacing: 1px;
+      background: var(--gold-light); color: var(--red-mid);
+      padding: 2px 10px; border-radius: 100px;
+    }
+
+    /* WHY US */
+    .why-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px; margin-top: 0.5rem;
+    }
+    .why-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem;
+    }
+    .why-card i { font-size: 28px; color: var(--red-mid); margin-bottom: 0.75rem; display: block; }
+    .why-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .why-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    /* ORDER */
+    .order-bg { background: var(--surface); }
+    .order-wrap {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem;
+      box-shadow: 0 2px 16px rgba(180,60,10,0.07);
+      max-width: 700px; margin: 0 auto;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 12px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; letter-spacing: 0.5px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; border-radius: var(--radius-sm);
+      border: 1px solid rgba(0,0,0,0.15);
+      background: var(--cream); color: var(--text);
+      padding: 10px 14px; font-size: 14px;
+      font-family: inherit; outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--orange); }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .submit-btn {
+      width: 100%; padding: 14px;
+      background: var(--red-mid); color: var(--gold);
+      border: none; border-radius: var(--radius-sm);
+      font-size: 15px; font-weight: 700; cursor: pointer; letter-spacing: 0.5px;
+    }
+    .submit-btn:hover { background: var(--red-dark); }
+    #order-confirm { display: none; text-align: center; padding: 2rem 1rem; }
+    #order-confirm .big { font-size: 56px; margin-bottom: 0.5rem; }
+    #order-confirm h3 { font-size: 20px; font-weight: 700; margin-bottom: 0.5rem; }
+    #order-confirm p { font-size: 14px; color: var(--text-muted); }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px; margin-top: 0.5rem;
+    }
+    .contact-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem;
+    }
+    .contact-card i { font-size: 26px; color: var(--red-mid); margin-bottom: 10px; display: block; }
+    .contact-card .c-label { font-size: 11px; font-weight: 700; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+    .contact-card .c-val { font-size: 14px; font-weight: 600; line-height: 1.6; }
+
+    /* FOOTER */
+    footer {
+      background: #3D0C04; color: rgba(255,220,120,0.7);
+      padding: 3rem 2rem 2rem; text-align: center;
+    }
+    .footer-om { font-size: 36px; margin-bottom: 0.5rem; }
+    .footer-brand { font-size: 22px; font-weight: 700; color: var(--gold); letter-spacing: 3px; margin-bottom: 0.25rem; }
+    .footer-sub { font-size: 13px; margin-bottom: 1.5rem; }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .footer-links a { font-size: 13px; color: rgba(255,220,120,0.7); }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-bless { font-size: 12px; color: rgba(255,200,80,0.4); letter-spacing: 1.5px; margin-top: 1rem; }
+    .footer-copy { font-size: 11px; color: rgba(255,200,80,0.3); margin-top: 0.5rem; }
+
+    /* RESPONSIVE NAV */
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .hero h1 { font-size: 32px; }
+      .section-title { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-brand">🕉 POOJA SIGNS</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#order">Order</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <button class="nav-cta" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">Order Now</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="hero-om">🕉</span>
+  <h1>POOJA SIGNS</h1>
+  <p class="tagline">Illuminate · Inspire · Impress</p>
+  <p class="sub">Premium signs &amp; branding solutions · Bangalore, India</p>
+  <div class="hero-btns">
+    <button class="btn-gold" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">Place an Order</button>
+    <button class="btn-outline-gold" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">View Our Products</button>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="strip">
+  <span class="strip-inner">
+    &nbsp;⭐ LED Signs &nbsp;·&nbsp; Neon Signs &nbsp;·&nbsp; SS Letters &nbsp;·&nbsp; Titanium Letters &nbsp;·&nbsp; Brass Letters &nbsp;·&nbsp; Vinyl Stickers &nbsp;·&nbsp; Flex Glow Signs &nbsp;·&nbsp; Digital Printing &nbsp;·&nbsp; ACP Sign Boards &nbsp;·&nbsp; MRF Metal Signs &nbsp;·&nbsp;
+    &nbsp;⭐ LED Signs &nbsp;·&nbsp; Neon Signs &nbsp;·&nbsp; SS Letters &nbsp;·&nbsp; Titanium Letters &nbsp;·&nbsp; Brass Letters &nbsp;·&nbsp; Vinyl Stickers &nbsp;·&nbsp; Flex Glow Signs &nbsp;·&nbsp; Digital Printing &nbsp;·&nbsp; ACP Sign Boards &nbsp;·&nbsp; MRF Metal Signs &nbsp;·&nbsp;
+  </span>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="section-label">Who we are</p>
+    <h2 class="section-title">Trusted by businesses across Bangalore</h2>
+    <div class="divider"></div>
+    <div class="about-wrap">
+      <div class="about-icon-box">🪔</div>
+      <div class="about-text">
+        <p>
+          Pooja Signs is a Bangalore-based signage specialist serving restaurants, retail stores, hotels, and businesses of all sizes. From glowing neon to precision-crafted metal lettering, we bring your brand to life with signs that stand out — day and night. Every order is crafted with care, quality, and a blessing for your business to flourish.
+        </p>
+        <div class="stats">
+          <div class="stat-item">
+            <div class="stat-num">500+</div>
+            <div class="stat-label">Signs Delivered</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">10+</div>
+            <div class="stat-label">Years in Bangalore</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Custom Made</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">⭐ 4.9</div>
+            <div class="stat-label">Customer Rating</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="products-bg">
+  <div class="container">
+    <p class="section-label">Our Products</p>
+    <h2 class="section-title">Signs for every business</h2>
+    <div class="divider"></div>
+    <div class="products-grid">
+
+      <div class="product-card">
+        <div class="product-icon-wrap">💡</div>
+        <div class="product-name">LED Signs</div>
+        <div class="product-desc">Energy-efficient illuminated LED boards — bright, durable, and eye-catching day and night.</div>
+        <span class="product-badge">POPULAR</span>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon-wrap">🌟</div>
+        <div class="product-name">Neon Signs</div>
+        <div class="product-desc">Custom neon lighting for restaurants, cafés, and retail — bold and vibrant.</div>
+        <span class="product-badge">TRENDING</span>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon-wrap">🔩</div>
+        <div class="product-name">SS Letters</div>
+        <div class="product-desc">Stainless steel 3D letters — sleek, modern, and built to last.</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon-wrap">✨</div>
+        <div class="product-name">Titanium Letters</div>
+        <div class="product-desc">Premium titanium-finish 3D letters for a sophisticated, contemporary look.</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon-wrap">🏆</div>
+        <div class="product-name">Brass Letters</div>
+        <div class="product-desc">Classic, elegant brass lettering with a timeless, prestigious appeal.</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon-wrap">🎨</div>
+        <div class="product-name">Vinyl Stickers</div>
+        <div class="product-desc">Custom-cut vinyl decals for windows, walls, vehicles, and floors.</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon-wrap">🌙</div>
+        <div class="product-name">Flex Glow Signs</div>
+        <div class="product-desc">Backlit flex banners that glow beautifully — visible day and night.</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon-wrap">🖨</div>
+        <div class="product-name">Digital Printing Boards</div>
+        <div class="product-desc">High-resolution full-color digital print on sturdy, weather-resistant boards.</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon-wrap">🪟</div>
+        <div class="product-name">ACP Sign Boards</div>
+        <div class="product-desc">Aluminium composite panel signboards — lightweight, flat, and long-lasting.</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon-wrap">🛡</div>
+        <div class="product-name">MRF Metal Signs</div>
+        <div class="product-desc">MRF-coated metal signs built tough for outdoor use in all weather.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section>
+  <div class="container">
+    <p class="section-label">Why Pooja Signs</p>
+    <h2 class="section-title">Quality you can count on</h2>
+    <div class="divider"></div>
+    <div class="why-grid">
+      <div class="why-card">
+        <i class="ti ti-palette"></i>
+        <h3>Custom Designs</h3>
+        <p>Every sign is tailor-made to your brand — your colors, your fonts, your vision.</p>
+      </div>
+      <div class="why-card">
+        <i class="ti ti-shield-check"></i>
+        <h3>Premium Materials</h3>
+        <p>We use only high-quality materials that are built to last through years of use.</p>
+      </div>
+      <div class="why-card">
+        <i class="ti ti-clock"></i>
+        <h3>On-Time Delivery</h3>
+        <p>We respect your deadlines and ensure your signs are ready when you need them.</p>
+      </div>
+      <div class="why-card">
+        <i class="ti ti-map-pin"></i>
+        <h3>Bangalore Local</h3>
+        <p>We're right here in Bangalore — easy to reach, quick to deliver, proud to serve.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER -->
+<section id="order" class="order-bg">
+  <div class="container">
+    <p class="section-label">Place an Order</p>
+    <h2 class="section-title">Get your custom sign made</h2>
+    <div class="divider"></div>
+    <p class="section-desc" style="margin-bottom: 1.5rem;">Fill in the form below and our team will contact you within 24 hours with a quote.</p>
+    <div class="order-wrap">
+      <div id="order-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" id="f-name" placeholder="Ramesh Kumar" />
+          </div>
+          <div class="form-group">
+            <label>Business Name</label>
+            <input type="text" id="f-biz" placeholder="Sri Sai Restaurant" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="f-phone" placeholder="+91 98765 43210" />
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="f-email" placeholder="yourname@email.com" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Sign Type Required</label>
+          <select id="f-type">
+            <option value="">Select a sign type...</option>
+            <option>LED Signs</option>
+            <option>Neon Signs</option>
+            <option>SS Letters (Stainless Steel)</option>
+            <option>Titanium Letters</option>
+            <option>Brass Letters</option>
+            <option>Vinyl Stickers</option>
+            <option>Flex Glow Signs</option>
+            <option>Digital Printing Boards</option>
+            <option>ACP Sign Boards</option>
+            <option>MRF Coated Metal Signs</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Requirements &amp; Details</label>
+          <textarea id="f-msg" placeholder="Describe your sign — size, text, colors, quantity, and any special requirements..."></textarea>
+        </div>
+        <button class="submit-btn" onclick="submitOrder()">Send Order Request →</button>
+      </div>
+      <div id="order-confirm">
+        <div class="big">🙏</div>
+        <h3>Thank you! We've received your request.</h3>
+        <p>Our team will contact you within 24 hours with a quote.<br>May Ganesha bless your business!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label">Get in Touch</p>
+    <h2 class="section-title">Visit or call us in Bangalore</h2>
+    <div class="divider"></div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <i class="ti ti-map-pin"></i>
+        <div class="c-label">Our Location</div>
+        <div class="c-val">Bangalore, Karnataka, India</div>
+      </div>
+      <div class="contact-card">
+        <i class="ti ti-phone"></i>
+        <div class="c-label">Call Us</div>
+        <div class="c-val">+91 98765 43210</div>
+      </div>
+      <div class="contact-card">
+        <i class="ti ti-mail"></i>
+        <div class="c-label">Email Us</div>
+        <div class="c-val">orders@poojasigns.in</div>
+      </div>
+      <div class="contact-card">
+        <i class="ti ti-clock"></i>
+        <div class="c-label">Working Hours</div>
+        <div class="c-val">Mon – Sat: 9 AM – 7 PM</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-om">🕉</div>
+  <div class="footer-brand">POOJA SIGNS</div>
+  <div class="footer-sub">Bangalore, Karnataka · Premium Signage Solutions</div>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#order">Order Now</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="footer-bless">ॐ गं गणपतये नमः · May your business shine bright</div>
+  <div class="footer-copy">© 2025 Pooja Signs, Bangalore. All rights reserved.</div>
+</footer>
+
+<script>
+  function submitOrder() {
+    const name = document.getElementById('f-name').value.trim();
+    const phone = document.getElementById('f-phone').value.trim();
+    const type = document.getElementById('f-type').value;
+    if (!name || !phone || !type) {
+      alert('Please fill in your name, phone number, and sign type to continue.');
+      return;
+    }
+    document.getElementById('order-form').style.display = 'none';
+    document.getElementById('order-confirm').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
